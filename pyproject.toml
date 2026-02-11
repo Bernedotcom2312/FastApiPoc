@@ -20,6 +20,8 @@ dev = [
     "httpx==0.28.1",
     "mypy==1.19.1",
     "ruff==0.15.0",
+    "commitizen==4.13.7",
+    "pre-commit==4.5.1",
 ]
 
 [build-system]
@@ -48,4 +50,29 @@ lint.select = [
 
 [tool.ruff.format]
 quote-style = "double"
+
+# Configuration Commitizen pour semantic versioning
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v$version"
+version_files = [
+    "pyproject.toml:version",
+]
+major_version_zero = true
+changelog_file = "CHANGELOG.md"
+changelog_format = "# Changelog\n\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n$changes"
+update_changelog_on_bump = true
+style = [
+    ["qmark", "fg:#ff9d00 bold"],
+    ["question", "bold"],
+    ["answer", "fg:#ff9d00 bold"],
+    ["pointer", "fg:#ff9d00 bold"],
+    ["highlighted", "fg:#ff9d00 bold"],
+    ["selected", "fg:#cc5454"],
+    ["separator", "fg:#cc5454"],
+    ["instruction", ""],
+    ["text", ""],
+    ["disabled", "fg:#858585 italic"]
+]
 indent-style = "space"

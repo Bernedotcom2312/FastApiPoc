@@ -1,0 +1,24 @@
+# Configuration des types de commits
+# Ce fichier définit les types de commits acceptés par commitizen
+
+[commit_types]
+feat = "✨ Nouvelle fonctionnalité"
+fix = "🐛 Correction de bug"
+docs = "📚 Documentation"
+style = "💎 Améliorations de style (formatage, points-virgules, etc.)"
+refactor = "📦 Refactorisation du code (ni nouvelle fonctionnalité ni correction)"
+perf = "🚀 Amélioration des performances"
+test = "🚨 Ajout ou modification de tests"
+chore = "🔧 Tâches de maintenance (dépendances, configuration, etc.)"
+ci = "👷 Configuration CI/CD"
+build = "🛠️ Changements du système de build"
+revert = "⏪ Annulation d'un commit précédent"
+
+[scopes]
+api = "API endpoints"
+auth = "Authentification"
+db = "Base de données"
+config = "Configuration"
+deps = "Dépendances"
+tests = "Tests"
+docs = "Documentation"
