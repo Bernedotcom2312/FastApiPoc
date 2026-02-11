@@ -46,3 +46,6 @@ L'API sera accessible à l'adresse : http://localhost:8000
 * github actions
 * devcontainer
 * dependabot
+* redis
+* DB
+* Auth
