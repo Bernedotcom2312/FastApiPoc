@@ -28,6 +28,32 @@ uninstall-hooks:
 pre-commit-all:
 	uv run pre-commit run --all-files
 
+# Docker commands
+docker-build:
+	docker build -t fastapi-app .
+
+docker-run:
+	docker run -p 8000:8000 fastapi-app
+
+docker-up:
+	docker-compose up --build
+
+docker-up-d:
+	docker-compose up -d --build
+
+docker-down:
+	docker-compose down
+
+docker-logs:
+	docker-compose logs -f
+
+docker-clean:
+	docker-compose down -v --remove-orphans
+	docker rmi fastapi-app 2>/dev/null || true
+
+docker-shell:
+	docker-compose exec fastapi-app /bin/bash
+
 commit:
 	uv run cz commit
 

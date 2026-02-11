@@ -122,6 +122,43 @@ make release        # Workflow complet de release
 └── README.md             # Ce fichier
 ```
 
+## � Docker
+
+### Lancer avec Docker
+
+```bash
+# Construire et lancer l'application
+docker-compose up --build
+
+# Lancer en arrière-plan
+docker-compose up -d
+
+# Voir les logs
+docker-compose logs -f
+
+# Arrêter les services
+docker-compose down
+```
+
+### Construire l'image Docker uniquement
+
+```bash
+# Construire l'image
+docker build -t fastapi-app .
+
+# Lancer le conteneur
+docker run -p 8000:8000 fastapi-app
+```
+
+L'application sera accessible à l'adresse : http://localhost:8000
+
+### Optimisations Docker
+
+- **Multi-stage build** : Image finale allégée
+- **UV** : Gestionnaire de paquets ultra-rapide
+- **Utilisateur non-root** : Sécurité renforcée
+- **Health check** : Surveillance de l'état de l'application
+
 ## 📋 Workflow de développement
 
 1. **Cloner et setup** : `make setup`
@@ -135,7 +172,7 @@ make release        # Workflow complet de release
 
 * ~~pre commit hook~~ ✅
 * ~~commitlint + semver~~ ✅
-* docker
+* ~~docker~~ ✅
 * trivy + sbom
 * github actions
 * devcontainer
@@ -143,3 +180,4 @@ make release        # Workflow complet de release
 * redis
 * DB
 * Auth
+* bake / buildx ?
